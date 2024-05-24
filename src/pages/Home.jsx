@@ -1,10 +1,20 @@
 import img from "../assets/meals.jpg";
+import Meals from "../components/Meals/Meals";
+ 
 function Home() {
   return (
-    <div className="w-full h-[70vh]  ">
-      <img style={{
-                    clipPath: 'polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%)'
-                }} src={img} alt="" className="w-[100%] h-[100%] object-cover" />
+    <div className="h-[94vh] flex flex-col bg-zinc-800">
+      <div className="h-[50vh]  bg-white " style={{
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 65%, 0% 100%)",
+      }}>
+    <img
+      
+      src= {img}
+      alt="Example Image"
+      className="w-full h-full object-cover"
+    />
+  </div>
+      <Meals  />
     </div>
   );
 }

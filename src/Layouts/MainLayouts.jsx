@@ -4,7 +4,7 @@ import Footer from "../components/Layout/Footer"
 
 function MainLayouts() {
   return (
-    <div className="bg-slate-700">
+    <div>
       <Header/>
       <Outlet/>
       <Footer/>
