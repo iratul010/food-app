@@ -6,7 +6,7 @@ import ModalOverlay from './ModalOverlay';
 
 // eslint-disable-next-line react/prop-types
 function Modal(props) {
-  console.log('children', )
+ 
   const modalRoot = document.getElementById('modal-root');
 
   return (

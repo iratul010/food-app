@@ -1,11 +1,8 @@
 // eslint-disable-next-line react/prop-types
 function MealItem({ data }) {
   const { id,name, description, price } = { ...data };
-  console.log(name, description, price);
-  // const handleSubmit = function(e){
-  //    e.preventDefault();
-  // }
-  // onSubmit={ handleSubmit} 
+ 
+ 
   return (
     <div className="flex flex-row justify-between items-center bg-slate-50 text-black p-8 border-b-2">
       <div className="flex flex-col justify-center items-center gap-1">

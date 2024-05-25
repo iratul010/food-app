@@ -3,12 +3,10 @@ import Modal from "../UI/Modal";
 
 function Cart(props) {
   // eslint-disable-next-line react/prop-types
-  const {cartIsShown,onShowCart } = props;
+  const {cartIsShown,setCartIsShown } = props;
   const handleShowCart = (e)=>{
     e.preventDefault();
-  
-     
-    onShowCart(cartIsShown)
+    setCartIsShown(cartIsShown)
   }
   const CartItems = [
     {
