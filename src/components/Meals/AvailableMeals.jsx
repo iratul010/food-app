@@ -1,8 +1,6 @@
 import Card from "../UI/Card";
 import MealItem from "./MealItem";
 
- 
-
 function AvailableMeals() {
   // eslint-disable-next-line no-unused-vars
   const DUMMY_MEALS = [
@@ -33,13 +31,11 @@ function AvailableMeals() {
   ];
 
   const mealList = DUMMY_MEALS.map((list) => {
-   return <MealItem key={list.id} data={list}/>;
+    return <MealItem key={list.id} data={list} />;
   });
   return (
     <section className=" w-[50%] min-w-[800px] h-[350px] overflow-auto mt-[50px] m-auto  text-center rounded-2xl">
-     <Card>
-   {  <ul className="flex flex-col">{mealList}</ul>}
-     </Card>
+      <Card>{<ul className="flex flex-col">{mealList}</ul>}</Card>
     </section>
   );
 }

@@ -1,11 +1,15 @@
+import { useEffect, useState } from "react";
 import useCart from "../../hooks/useCart";
 
 function HeaderCartButton(props) {
   const {items} = useCart();
- const numberOfCartItems = items.reduce((cur,acc)=>{
-  return cur+acc;
+  const [ showBtnClass,setShowBtnClass] = useState(false);
+ 
+ const numberOfCartItems = items.reduce((cur,item)=>{
+  return cur + Number(item.amount);
  },0)
   const handleShowCart = (e) => {
+   
     e.preventDefault();
     // eslint-disable-next-line react/prop-types
     props.setCartIsShown(!false);
@@ -13,10 +17,26 @@ function HeaderCartButton(props) {
    
 
   };
+
+ const btnClass = 'btn bg-slate-900 w-60 h-10 bg-opacity-50 rounded-full p-4 flex flex-row items-center justify-evenly hover:bg-opacity-60   transition-all duration-300'
+   // eslint-disable-next-line no-undef
+   const  btnAllClass = `${btnClass} ${showBtnClass?  'bump' : ''}`
+useEffect(()=>{
+  if(items.length===0){
+    return;
+
+  }else{
+    
+   setShowBtnClass(true)
+  }
+  setTimeout(() => {
+    setShowBtnClass(false);
+  }, 300);
+},[items])
   return (
     <button
       onClick={handleShowCart}
-      className="btn bg-slate-900 w-60 h-10 bg-opacity-50 rounded-full p-4 flex flex-row items-center justify-evenly hover:bg-opacity-60   transition-all duration-300 "
+      className={btnAllClass}
     >
       <span className="">
         <svg
