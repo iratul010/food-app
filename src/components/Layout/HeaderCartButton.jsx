@@ -29,9 +29,12 @@ useEffect(()=>{
     
    setShowBtnClass(true)
   }
-  setTimeout(() => {
+  const timer =setTimeout(() => {
     setShowBtnClass(false);
   }, 300);
+  return ()=>{
+    clearTimeout(timer)
+  }
 },[items])
   return (
     <button
